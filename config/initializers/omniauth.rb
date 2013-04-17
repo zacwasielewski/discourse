@@ -45,9 +45,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :boulderproblems,
            :setup => lambda { |env|
               strategy = env['omniauth.strategy']
-              strategy.options[:client_id] = Rails.application.config.boulderproblems_api_key #SiteSetting.boulderproblems_client_id
-              strategy.options[:client_secret] = Rails.application.config.boulderproblems_shared_secret #SiteSetting.boulderproblems_client_secret
-			  strategy.options[:client_options].site = Rails.application.config.boulderproblems_auth_host
+              strategy.options[:client_id] = SiteSetting.boulderproblems_client_id
+              strategy.options[:client_secret] = SiteSetting.boulderproblems_client_secret
            }
 
   provider :browser_id,
