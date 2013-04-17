@@ -46,9 +46,5 @@ Discourse::Application.configure do
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
 
   config.enable_mini_profiler = true
-
-  config.boulderproblems_auth_host = 'http://localhost:8080'
-  config.boulderproblems_api_key = '286b4297a4efc3c0d90d14ad91688c63251217f8e7c05ce6582f396c86504b79'
-  config.boulderproblems_shared_secret = '6118695e124da956461cbcd0108519065713f016f337b08394b0adadf2b94c20'
 end
 
