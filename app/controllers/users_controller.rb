@@ -382,6 +382,7 @@ class UsersController < ApplicationController
           screen_name: auth[:github_screen_name],
           github_user_id: auth[:github_user_id]
         )
+      end
 
       if boulderproblems_auth?(auth)
         BoulderproblemsUserInfo.create(
