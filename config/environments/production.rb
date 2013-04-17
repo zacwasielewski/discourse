@@ -1,3 +1,5 @@
+ENV['SECRET_TOKEN']="d6a458e555a8dc98ab7b97715a7a97929966b75cbad337edd6d104c586ccd52c"
+
 Discourse::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -21,14 +23,15 @@ Discourse::Application.configure do
   config.assets.digest = true
 
   # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  #config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.sendmail_settings = {arguments: '-i'}
+  #config.action_mailer.delivery_method = :sendmail
+  #config.action_mailer.sendmail_settings = {arguments: '-i'}
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify

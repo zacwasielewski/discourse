@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'active_model_serializers', git: 'git://github.com/rails-api/active_model_serializers.git'
-gem 'ember-rails', git: 'git://github.com/emberjs/ember-rails.git' # so we get the pre version
-gem 'vestal_versions', git: 'git://github.com/zhangyuan/vestal_versions'
+gem 'active_model_serializers' #, git: 'git://github.com/rails-api/active_model_serializers.git'
+gem 'ember-rails' # , git: 'git://github.com/emberjs/ember-rails.git' # so we get the pre version
+gem 'vestal_versions', '1.2.2', :path => 'vendor/gems/vestal_versions' #, git: 'git://github.com/zhangyuan/vestal_versions'
 
 gem 'message_bus', path: 'vendor/gems/message_bus'
 gem 'rails_multisite', path: 'vendor/gems/rails_multisite'
@@ -37,10 +37,10 @@ gem "openid-redis-store"
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem "omniauth-github"
-gem "omniauth-browserid", :git => "git://github.com/callahad/omniauth-browserid.git", :branch => "observer_api"
+gem "omniauth-browserid" # , :git => "git://github.com/callahad/omniauth-browserid.git", :branch => "observer_api"
 gem 'oj'
 gem 'pg'
-gem 'rails'
+gem 'rails', '3.2.12'
 gem 'rake'
 gem 'redis'
 gem 'redis-rails'
@@ -53,7 +53,7 @@ gem 'sidekiq'
 gem 'sinatra', require: nil
 gem 'slim'  # required for sidekiq-web
 gem 'therubyracer', require: 'v8'
-gem 'thin'
+#gem 'thin'
 gem 'diffy'
 
 # Gem that enables support for plugins. It is required.
@@ -77,43 +77,43 @@ group :assets do
 end
 
 group :test do
-  gem "fakeweb", "~> 1.3.0"
+  #gem "fakeweb", "~> 1.3.0"
 end
 
 group :test, :development do
-  gem 'jshint_on_rails'
-  gem 'guard-jshint-on-rails'
-  gem 'certified'
-  gem 'fabrication'
-  gem 'guard-jasmine'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'jasminerice'
-  gem 'mocha', require: false
-  gem 'rb-fsevent'
-  gem 'rb-inotify', '~> 0.8.8', require: RUBY_PLATFORM.include?('linux') && 'rb-inotify'
-  gem 'rspec-rails'
-  gem 'shoulda'
-  gem 'simplecov', require: false
-  gem 'terminal-notifier-guard', require: RUBY_PLATFORM.include?('darwin') && 'terminal-notifier-guard'
+  #gem 'jshint_on_rails'
+  #gem 'guard-jshint-on-rails'
+  #gem 'certified'
+  #gem 'fabrication'
+  #gem 'guard-jasmine'
+  #gem 'guard-rspec'
+  #gem 'guard-spork'
+  #gem 'jasminerice'
+  #gem 'mocha', require: false
+  #gem 'rb-fsevent'
+  #gem 'rb-inotify', '~> 0.8.8', require: RUBY_PLATFORM.include?('linux') && 'rb-inotify'
+  #gem 'rspec-rails'
+  #gem 'shoulda'
+  #gem 'simplecov', require: false
+  #gem 'terminal-notifier-guard', require: RUBY_PLATFORM.include?('darwin') && 'terminal-notifier-guard'
 end
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'librarian', '>= 0.0.25', require: false
-  gem 'pry-rails'
+  #gem 'better_errors'
+  #gem 'binding_of_caller'
+  #gem 'librarian', '>= 0.0.25', require: false
+  #gem 'pry-rails'
 end
 
 # this is an optional gem, it provides a high performance replacement
 # to String#blank? a method that is called quite frequently in current
 # ActiveRecord, this may change in the future
-gem 'fast_blank' #, github: "SamSaffron/fast_blank"
+gem 'fast_blank', :path => 'vendor/gems/fast_blank' #, github: "SamSaffron/fast_blank"
 
 # IMPORTANT: mini profiler monkey patches, so it better be required last
 #  If you want to amend mini profiler to do the monkey patches in the railstie
 #  we are open to it.
-gem 'rack-mini-profiler' #, git: 'git://github.com/SamSaffron/MiniProfiler'
+gem 'rack-mini-profiler' # # , git: 'git://github.com/SamSaffron/MiniProfiler'
 
 # perftools only works on 1.9 atm
 group :profile do
