@@ -63,4 +63,8 @@ class AdminDashboardData
   def github_config_check
     I18n.t('dashboard.github_config_warning') if SiteSetting.enable_github_logins and (!SiteSetting.github_client_id.present? or !SiteSetting.github_client_secret.present?)
   end
+
+  def boulderproblems_config_check
+    I18n.t('dashboard.boulderproblems_config_warning') if SiteSetting.enable_boulderproblems_logins and (!SiteSetting.boulderproblems_client_id.present? or !SiteSetting.boulderproblems_client_secret.present?)
+  end
 end
