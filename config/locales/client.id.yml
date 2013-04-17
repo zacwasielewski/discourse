@@ -251,6 +251,9 @@ id:
       github:
         title: "with GitHub"
         message: "Authenticating with GitHub (make sure pop up blockers are not enabled)"
+      boulderproblems:
+        title: "with Boulder Problems"
+        message: "Authenticating with Boulder Problems (make sure pop up blockers are not enabled)"
       persona:
         title: "with Persona"
         message: "Authenticating with Mozilla Persona (make sure pop up blockers are not enabled)"
@@ -290,7 +293,7 @@ id:
       posted: "<i title='replied' class='icon icon-reply'></i> {{username}} {{link}}"
       edited: "<i title='edited' class='icon icon-pencil'></i> {{username}} {{link}}"
       liked: "<i title='liked' class='icon icon-heart'></i> {{username}} {{link}}"
-      private_message: "<i class='icon icon-envelope-alt' title='private message'></i> {{username}} sent you a private message: {{link}}"
+      private_message: "<i class='icon icon-envelope-alt' title='private message'></i> {{username}} {{link}}"
       invited_to_private_message: "{{username}} invited you to a private conversation: {{link}}"
       invitee_accepted: "<i title='accepted your invitation' class='icon icon-signin'></i> {{username}} accepted your invitation"
       moved_post: "<i title='moved post' class='icon icon-arrow-right'></i> {{username}} moved post to {{link}}"
@@ -657,7 +660,7 @@ id:
         title: "Customize"
         header: "Header"
         css: "Stylesheet"
-        override_default: "Override default?"
+        override_default: "Do not include standard style sheet"
         enabled: "Enabled?"
         preview: "preview"
         undo_preview: "undo preview"

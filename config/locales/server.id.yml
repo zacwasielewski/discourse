@@ -326,7 +326,7 @@ id:
     logo_small_url: "The small logo for your site used when scrolling down on topics eg: http://example.com/logo-small.png"
     favicon_url: "A favicon for your site, see http://en.wikipedia.org/wiki/Favicon"
     notification_email: "The return email address used when sending system emails such as notifying users of lost passwords, new accounts etc"
-    use_ssl: "Should the site be accessible via SSL?"
+    use_ssl: "Should the site be accessible via SSL? (NOT IMPLEMENTED, EXPERIMENTAL)"
     best_of_score_threshold: "The minimum score of a post to be included in the 'best of'"
     best_of_posts_required: "Minimum posts in a topic before 'best of' mode is enabled"
     best_of_likes_required: "Minimum likes in a topic before the 'best of' mode will be enabled"
@@ -381,6 +381,10 @@ id:
     enable_github_logins: "Enable Github authentication, requires github_client_id and github_client_secret"
     github_client_id: "Client id for Github authentication, registered at https://github.com/settings/applications"
     github_client_secret: "Client secret for Github authentication, registered at https://github.com/settings/applications"
+
+    enable_boulderproblems_logins: "Enable Boulder Problems authentication, requires boulderproblems_client_id and boulderproblems_client_secret"
+    boulderproblems_client_id: "Client id for Boulder Problems authentication, registered at https://boulderproblems.com/oauth/applications"
+    boulderproblems_client_secret: "Client secret for Boulder Problems authentication, registered at https://boulderproblems.com/oauth/applications"
 
     enable_persona_logins: "Enable email-based authentication with Mozilla Persona"
 

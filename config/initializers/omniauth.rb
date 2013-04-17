@@ -41,6 +41,13 @@ Rails.application.config.middleware.use OmniAuth::Builder do
               strategy.options[:client_id] = SiteSetting.github_client_id
               strategy.options[:client_secret] = SiteSetting.github_client_secret
            }
+           
+  provider :boulderproblems,
+           :setup => lambda { |env|
+              strategy = env['omniauth.strategy']
+              strategy.options[:client_id] = SiteSetting.boulderproblems_client_id
+              strategy.options[:client_secret] = SiteSetting.boulderproblems_client_secret
+           }
 
   provider :browser_id,
            :name => 'persona'

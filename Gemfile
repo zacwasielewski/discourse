@@ -26,6 +26,9 @@ gem 'hiredis'
 # note: for image_optim to correctly work you need
 # sudo apt-get install -y advancecomp gifsicle jpegoptim libjpeg-progs optipng pngcrush
 gem 'image_optim'
+# note: for image_sorcery to correctly work you need
+# sudo apt-get install -y imagemagick
+gem 'image_sorcery'
 gem 'jquery-rails'
 gem 'minitest'
 gem 'multi_json'
@@ -112,8 +115,12 @@ gem 'fast_blank', :path => 'vendor/gems/fast_blank' #, github: "SamSaffron/fast_
 
 # IMPORTANT: mini profiler monkey patches, so it better be required last
 #  If you want to amend mini profiler to do the monkey patches in the railstie
-#  we are open to it.
-gem 'rack-mini-profiler' # # , git: 'git://github.com/SamSaffron/MiniProfiler'
+#  we are open to it. by deferring require to the initializer we can configure disourse installs without it
+gem 'rack-mini-profiler', require: false  # require: false #, git: 'git://github.com/SamSaffron/MiniProfiler'
+
+# used for caching, optional
+gem 'redis-rack-cache', require: false
+gem 'rack-cache', require: false
 
 # perftools only works on 1.9 atm
 group :profile do
@@ -122,3 +129,5 @@ group :profile do
   # if you need to profile, uncomment out this line
   # gem 'rack-perftools_profiler', require: 'rack/perftools_profiler', platform: :mri_19
 end
+
+gem 'omniauth-boulderproblems-oauth2', :git => "git://github.com/zacwasielewski/omniauth-boulderproblems-oauth2.git", :branch => "master"

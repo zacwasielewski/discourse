@@ -111,6 +111,26 @@ describe Users::OmniauthCallbacksController do
 
   end
 
+  describe 'boulderproblems' do
+
+    before do
+      request.env["omniauth.auth"] = auth
+    end
+
+    it "fails when boulderproblems logins are disabled" do
+      SiteSetting.stubs(:enable_boulderproblems_logins?).returns(false)
+      get :complete, provider: 'boulderproblems'
+      response.should_not be_success
+    end
+
+    it "succeeds when boulderproblems logins are enabled" do
+      SiteSetting.stubs(:enable_boulderproblems_logins?).returns(true)
+      get :complete, provider: 'boulderproblems'
+      response.should be_success
+    end
+
+  end
+
   describe 'persona' do
 
     before do

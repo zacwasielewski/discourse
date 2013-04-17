@@ -168,6 +168,13 @@
       content: "g";
     }
   }
+  &.boulderproblems {
+    background: $boulderproblems;
+    &:before {
+	  font-family: "fontAwesome";
+      content: "\f046";
+    }
+  }
   &.persona {
     background: $persona;
     &:before {

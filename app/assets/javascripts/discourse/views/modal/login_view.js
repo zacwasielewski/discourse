@@ -34,6 +34,7 @@ Discourse.LoginView = Discourse.ModalBodyView.extend({
            Discourse.SiteSettings.enable_twitter_logins ||
            Discourse.SiteSettings.enable_yahoo_logins ||
            Discourse.SiteSettings.enable_github_logins ||
+           Discourse.SiteSettings.enable_boulderproblems_logins ||
            Discourse.SiteSettings.enable_persona_logins;
   }.property(),
 
@@ -119,6 +120,13 @@ Discourse.LoginView = Discourse.ModalBodyView.extend({
     var left = this.get('lastX') - 400;
     var top = this.get('lastY') - 200;
     return window.open(Discourse.getURL("/auth/github"), "_blank", "menubar=no,status=no,height=400,width=800,left=" + left + ",top=" + top);
+  },
+
+  boulderproblemsLogin: function() {
+    this.set('authenticate', 'boulderproblems');
+    var left = this.get('lastX') - 400;
+    var top = this.get('lastY') - 200;
+    return window.open(Discourse.getURL("/auth/boulderproblems"), "_blank", "menubar=no,status=no,height=400,width=800,left=" + left + ",top=" + top);
   },
 
   personaLogin: function() {

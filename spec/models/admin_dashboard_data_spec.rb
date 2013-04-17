@@ -185,6 +185,14 @@ describe AdminDashboardData do
       let(:secret) { :github_client_secret }
       it_should_behave_like 'problem detection for login providers'
     end
+
+    describe 'boulderproblems' do
+      subject { AdminDashboardData.new.boulderproblems_config_check }
+      let(:enable_setting) { :enable_boulderproblems_logins }
+      let(:key) { :boulderproblems_client_id }
+      let(:secret) { :boulderproblems_client_secret }
+      it_should_behave_like 'problem detection for login providers'
+    end
   end
 
 end
