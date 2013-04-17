@@ -364,6 +364,16 @@ describe UsersController do
                               password: "strongpassword", email: @user.email
         end
 
+        it 'should create boulderproblems user info if none exists' do
+          bp_auth = { boulderproblems_user_id: 2, boulderproblems_screen_name: "bruce" }
+          session[:authentication] = bp_auth
+          BoulderproblemsUserInfo.expects(:find_by_boulderproblems_user_id).returns(nil)
+          BoulderproblemsUserInfo.expects(:create)
+
+          xhr :post, :create, name: @user.name, username: @user.username,
+                              password: "strongpassword", email: @user.email
+        end
+
       end
     end
 

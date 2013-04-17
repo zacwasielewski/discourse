@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < ApplicationController
   layout false
 
   def self.types
-    @types ||= Enum.new(:facebook, :twitter, :google, :yahoo, :github, :persona)
+    @types ||= Enum.new(:facebook, :twitter, :google, :yahoo, :github, :boulderproblems, :persona)
   end
 
   # need to be able to call this
@@ -231,6 +231,44 @@ class Users::OmniauthCallbacksController < ApplicationController
 
   end
 
+  def create_or_sign_on_user_using_boulderproblems(auth_token)
+
+    data = auth_token[:info]
+    screen_name = data["nickname"]
+    boulderproblems_user_id = auth_token["uid"]
+
+    session[:authentication] = {
+      boulderproblems_user_id: boulderproblems_user_id,
+      boulderproblems_screen_name: screen_name
+    }
+
+    user_info = BoulderproblemsUserInfo.where(boulderproblems_user_id: boulderproblems_user_id).first
+
+    @data = {
+      username: screen_name,
+      auth_provider: "Boulderproblems"
+    }
+
+    if user_info
+      if user_info.user.active
+
+        if Guardian.new(user_info.user).can_access_forum?
+          log_on_user(user_info.user)
+          @data[:authenticated] = true
+        else
+          @data[:awaiting_approval] = true
+        end
+
+      else
+        @data[:awaiting_activation] = true
+        # send another email ?
+      end
+    else
+      @data[:name] = screen_name
+    end
+
+  end
+  
   def create_or_sign_on_user_using_persona(auth_token)
 
     email = auth_token[:info][:email]

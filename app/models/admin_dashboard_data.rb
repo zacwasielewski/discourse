@@ -24,7 +24,7 @@ class AdminDashboardData
   end
 
   def problems
-    [rails_env_check, host_names_check, gc_checks, sidekiq_check || clockwork_check, ram_check, facebook_config_check, twitter_config_check, github_config_check].compact
+    [rails_env_check, host_names_check, gc_checks, sidekiq_check || clockwork_check, ram_check, facebook_config_check, twitter_config_check, github_config_check, boulderproblems_config_check].compact
   end
 
   def rails_env_check

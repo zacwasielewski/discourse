@@ -382,6 +382,13 @@ class UsersController < ApplicationController
           screen_name: auth[:github_screen_name],
           github_user_id: auth[:github_user_id]
         )
+
+      if boulderproblems_auth?(auth)
+        BoulderproblemsUserInfo.create(
+          user_id: user.id,
+          screen_name: auth[:boulderproblems_screen_name],
+          boulderproblems_user_id: auth[:boulderproblems_user_id]
+        )
       end
     end
 
@@ -398,6 +405,11 @@ class UsersController < ApplicationController
     def github_auth?(auth)
       auth[:github_user_id] && auth[:github_screen_name] &&
       GithubUserInfo.find_by_github_user_id(auth[:github_user_id]).nil?
+    end
+
+    def boulderproblems_auth?(auth)
+      auth[:boulderproblems_user_id] && auth[:boulderproblems_screen_name] &&
+      BoulderproblemsUserInfo.find_by_boulderproblems_user_id(auth[:boulderproblems_user_id]).nil?
     end
 
     def determine_avatar_size(size)

@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
   has_many :invites
   has_one :twitter_user_info, dependent: :destroy
   has_one :github_user_info, dependent: :destroy
+  has_one :boulderproblems_user_info, dependent: :destroy
   belongs_to :approved_by, class_name: 'User'
 
   validates_presence_of :username
