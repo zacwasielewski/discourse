@@ -84,3 +84,4 @@ config/version.rb
 vendor/
 public/assets/
 Gemfile
+log/
