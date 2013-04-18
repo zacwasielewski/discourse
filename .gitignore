@@ -83,5 +83,5 @@ config/version.rb
 # ignore vendor files and compiled assets
 vendor/
 public/assets/
-Gemfile
+Gemfile.lock
 log/
