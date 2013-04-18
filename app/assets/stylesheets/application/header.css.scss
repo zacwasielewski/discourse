@@ -12,7 +12,7 @@
   left: 0;
   z-index: 1000;
   border-bottom: 1px solid #9baab2;
-  background-color: $white;
+  background-color: #464949;
   @include box-shadow((0 1px 3px rgba($black, 0.12), inset 0 -4px 4px -4px rgba($black, 0.3)));
   .docked & {
     position: fixed;
@@ -65,15 +65,15 @@
         @include border-radius-all(4px 0 0 0);
       }
       &:last-child .icon {
-        border-right: 1px solid #ccc;
+        border-right: 1px solid #3f3f3f;
         @include border-radius-all(0 4px 4px 0);
       }
     }
     .icon {
       display: block;
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #d6d6d6;
+      border-top: 1px solid #3f3f3f;
+      border-bottom: 1px solid #3f3f3f;
+      border-left: 1px solid #3f3f3f;
       padding: 3px;
       color: $nav-button-color;
       text-decoration: none;
