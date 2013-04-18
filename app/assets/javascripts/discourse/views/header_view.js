@@ -99,7 +99,7 @@ Discourse.HeaderView = Discourse.View.extend({
     if (this.get('controller.showExtraInfo')) {
       var logo = Discourse.SiteSettings.logo_small_url;
       if (logo && logo.length > 1) {
-        result += "<img class='logo-small' src='" + logo + "' width='33' height='33'>";
+        result += "<img class='logo-small' src='" + logo + "' width='41' height='33'>";
       } else {
         result += "<i class='icon-home'></i>";
       }
