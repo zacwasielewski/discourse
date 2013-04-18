@@ -79,3 +79,7 @@ config/version.rb
 
 # ignore the Ruby Version manager (rvm) file
 .rvmrc
+
+# ignore vendor files and compiled assets
+vendor/
+public/assets/
