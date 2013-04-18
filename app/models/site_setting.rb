@@ -137,7 +137,7 @@ class SiteSetting < ActiveRecord::Base
   setting(:github_client_id, '')
   setting(:github_client_secret, '')
 
-  client_setting(:enable_boulderproblems_logins, true)
+  client_setting(:enable_boulderproblems_logins, false)
   setting(:boulderproblems_client_id, '')
   setting(:boulderproblems_client_secret, '')
 
